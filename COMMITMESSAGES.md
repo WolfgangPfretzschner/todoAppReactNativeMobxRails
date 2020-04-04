@@ -1,0 +1,1 @@
+1 - create backend with "rails new backend --api" and frontend with "npx react-native init frontend"
