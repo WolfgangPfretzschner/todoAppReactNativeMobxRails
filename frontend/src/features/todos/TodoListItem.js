@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView, Animated} from 'react-native';
 import {
   Colors,
   Typography,
@@ -24,8 +24,8 @@ class DrawerScreen extends Component {
     super(props);
     this.state = {
       text: `${props.todo.title}`,
-      active: 0,
-      value1: false,
+      done: props.todo.done,
+      line: new Animated.Value(0),
       itemsTintColor: undefined,
       hideUnderline: false,
       underlineColor: undefined,
@@ -39,13 +39,24 @@ class DrawerScreen extends Component {
     };
   }
 
+
   onCheck = () => {
-    if (this.state.active === 0) {
-      this.setState({active: 1});
-      this.setState({value1: true});
+    
+    if (this.state.done === false) {
+      Animated.timing(this.state.line, {
+        toValue: 1,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+      this.setState({done: true});
     } else {
-      this.setState({active: 0});
-      this.setState({value1: false});
+      Animated.timing(this.state.line, {
+        toValue: 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+
+      this.setState({done: false});
     }
   };
 
@@ -82,7 +93,7 @@ class DrawerScreen extends Component {
           <View style={{flex: 1, flexDirection: 'row'}}>
             <ListItem.Part left>
               <Checkbox
-                value={this.state.value1}
+                value={this.state.done}
                 onValueChange={() => this.onCheck()}
                 style={{marginHorizontal: 15}}
               />
@@ -107,9 +118,19 @@ class DrawerScreen extends Component {
               />
             </ListItem.Part>
           </View>
-          <View
+          <Animated.View
             style={{
               borderBottomWidth: 1,
+              zIndex: 99,
+              position: 'absolute',
+              transform: [
+                {
+                  translateY: this.state.line.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: [60, 33],
+                  }),
+                },
+              ],
               width: '100%',
             }}
           />

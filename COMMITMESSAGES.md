@@ -7,3 +7,4 @@
 	add packages for ui library from wix, Mobx, eslint and plugins  
 	make absolute imports work
 4. Frontend: add components and Mobx store
+5. add line animation

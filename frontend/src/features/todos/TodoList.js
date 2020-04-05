@@ -36,7 +36,7 @@ class TodoList extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{flex:1, flexDirection: 'column', marginTop:10}}>
         <Header />
         <ScrollView
           style={styles.container}
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   //    bottom: 30
   // },
   contentContainer: {
-    paddingBottom: 50,
+    paddingBottom: 5,
   },
 });
 

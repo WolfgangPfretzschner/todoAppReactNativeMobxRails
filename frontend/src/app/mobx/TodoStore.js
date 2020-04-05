@@ -33,7 +33,7 @@ export default class TodoStore {
     } else {
       this.todos.unshift(this.todos.splice(this.todos.indexOf(todo), 1)[0]);
     }
-    return todos;
+    return;
   };
 
   deleteTodo = (id) => {
@@ -47,7 +47,8 @@ class TodoModel {
   id = Date.now();
   @observable title;
   @observable done = false;
-  constructor(title) {
+  constructor(title, done) {
     this.title = title;
+    this.done = done;
   }
 }
