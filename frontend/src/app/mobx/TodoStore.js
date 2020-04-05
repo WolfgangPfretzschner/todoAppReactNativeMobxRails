@@ -10,7 +10,7 @@ export default class TodoStore {
 
   getInitialTodos() {
     axios
-      .get('http://15db600d.ngrok.io/api/v1/todos')
+      .get('http://localhost:3000/api/v1/todos')
       .then((response) => {
         this.todos = response.data;
         console.log('todosIn ========>', response.data);
