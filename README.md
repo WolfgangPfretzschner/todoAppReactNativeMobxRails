@@ -1,6 +1,6 @@
 # Todo App with React Native, Mobx and Rails backend
 
-![](https://gifyu.com/image/dJJl)
+![](https://s6.gifyu.com/images/CleanShot-2020-04-04-at-23.06.35.gif)
 
 Instructions to run on IOS simulator
 
