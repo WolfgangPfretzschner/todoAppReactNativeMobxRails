@@ -6,8 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-Todo.create(title: "Buy toilet paper", isComplete: false)
-Todo.create(title: "Buy more toilet paper", isComplete: false)
-Todo.create(title: "Buy more and more toilet paper", isComplete: false)
-Todo.create(title: "Buy all the toilet paper", isComplete: false)
+Todo.create(title: "Get toiletpaper", done: false)
+Todo.create(title: "Get more toiletpaper", done: false)
+Todo.create(title: "Do research on how to get more toiletpaper", done: false)
+Todo.create(title: "learn how to make toiletpaper form money", done: false)

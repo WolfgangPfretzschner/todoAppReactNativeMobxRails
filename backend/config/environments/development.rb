@@ -11,10 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-
-  #add allowd domain
-  config.hosts << "76c41b50.ngrok.io"
-
+  
+  config.hosts << "15db600d.ngrok.io"
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
