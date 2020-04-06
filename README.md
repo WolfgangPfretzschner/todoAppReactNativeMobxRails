@@ -11,6 +11,9 @@ git clone
 #install backend
 cd backend
 bundle install
+rails db:migrate
+rails db:seed
+
 #start rails server
 rails server
 
